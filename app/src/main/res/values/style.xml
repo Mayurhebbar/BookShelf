@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="android:textColorSecondary">@color/color_D8D8D8</item>
+        <item name="colorAccent">@color/color_e0340b</item>
+    </style>
+
+    <style name="BookShelf" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_e0340b</item>
+        <item name="android:filterTouchesWhenObscured">true</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/ivBook"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/image_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tvBookTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_424242"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="Book Title"
+        app:layout_constraintTop_toTopOf="@+id/ivBook"
+        app:layout_constraintStart_toEndOf="@+id/ivBook"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tvBookScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_FFCE3B"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        tools:text="24.6"
+        app:layout_constraintStart_toStartOf="@+id/tvBookTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookTitle"
+        android:layout_marginTop="2dp"
+        />
+
+    <TextView
+        android:id="@+id/tvBookPublishedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_424242"
+        android:textSize="12sp"
+        tools:text="Book Title"
+        app:layout_constraintStart_toStartOf="@+id/tvBookScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookScore"
+        android:layout_marginTop="2dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

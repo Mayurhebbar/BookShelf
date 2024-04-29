@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Book Shelf</string>
+    <string name="email_hint">Enter your valid email</string>
+    <string name="email_error">Email is not Valid</string>
+    <string name="username_hint">Enter your Name</string>
+    <string name="username_error">Name should not be empty</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="password_error">Password is not valid, please check below instructions</string>
+    <string name="password_instruction">Passwords must adhere to all the following criteria to be considered valid</string>
+    <string name="min_password">1. Minimum 8 characters is needed</string>
+    <string name="one_num_password">2. AtLeast 1 number</string>
+    <string name="one_special_characters_password">3. AtLeast 1 special characters</string>
+    <string name="one_lower_characters_password">4. AtLeast 1 lowercase characters</string>
+    <string name="one_upper_characters_password">5. AtLeast 1 uppercase characters</string>
+    <string name="show_password">Show Password</string>
+    <string name="select_country">Select Your Country</string>
+    <string name="btn_sign_up">Create Account</string>
+    <string name="btn_sign_in">Login</string>
+    <string name="country_error">Please select your country</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up" >Sign Up</string>
+    <string name="mandatory_text">All Fields are Mandatory</string>
+    <string name="or">OR</string>
+    <string name="go_to_sign_up_page">Go to Sign Up Page</string>
+    <string name="invalid_login_credentials">Invalid Login Credentials, please check entered email or password.</string>
+    <string name="email_empty_error">Email should not be empty</string>
+    <string name="log_out">Log Out</string>
+    <string name="publish_date">"Published in %s"</string>
+    <string name="tags_hint">Add your Tags</string>
+    <string name="btn_add_tags">Add Tag</string>
+</resources>
