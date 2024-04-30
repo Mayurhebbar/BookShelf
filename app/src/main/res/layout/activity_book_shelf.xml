@@ -78,4 +78,39 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/networkContainer"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/networkStatusTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:text="@string/no_internet"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/checkNetworkButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:backgroundTint="@color/color_e0340b"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:text="@string/no_internet_btn" />
+
+    </LinearLayout>
 </LinearLayout>

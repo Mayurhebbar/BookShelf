@@ -1,6 +1,9 @@
 package com.example.bookshelf.ui
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -47,7 +50,12 @@ class BookShelfActivity : AppCompatActivity() {
 
         fetchBookList()
         observerBookList()
-        showProgressContainer(true)
+        if(isNetworkAvailable()){
+            showProgressContainer(true)
+        }
+        else{
+            showNetworkIssueContainer()
+        }
         handleClickListeners()
     }
 
@@ -59,6 +67,13 @@ class BookShelfActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        binding.checkNetworkButton.setOnClickListener {
+            if(isNetworkAvailable()){
+                fetchBookList()
+                showProgressContainer(true)
+            }
+        }
     }
 
     private fun fetchBookList(){
@@ -69,6 +84,20 @@ class BookShelfActivity : AppCompatActivity() {
         binding.progressContainer.isVisible = show
         binding.toolBarContainer.isVisible = !show
         binding.rvServiceList.isVisible = !show
+    }
+
+    private fun showNetworkIssueContainer(){
+        binding.networkContainer.isVisible = true
+        binding.toolBarContainer.isVisible = false
+        binding.rvServiceList.isVisible = false
+    }
+
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val network = connectivityManager.activeNetwork ?: return false
+        val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     private fun observerBookList(){

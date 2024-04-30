@@ -1,135 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <TextView
-        android:id="@+id/tvSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/sign_in"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:layout_marginTop="140dp"/>
-
-    <TextView
-        android:id="@+id/tvLoginError"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/invalid_login_credentials"
-        android:textColor="@color/color_e0340b"
-        android:textSize="14sp"
-        android:visibility="gone"
-        android:layout_marginHorizontal="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvSignIn" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginError"
-        android:layout_marginHorizontal="20dp"
-        android:background="@drawable/bg_grey_border"
-        android:gravity="center_vertical"
-        android:elevation="4dp"
-        android:paddingHorizontal="16dp"
-        android:layout_marginTop="30dp"
-        android:paddingVertical="12dp"
-        android:textColor="@color/color_424242"
-        android:textColorHint="@color/color_9e9e9e"
-        android:inputType="textEmailAddress|textMultiLine"
-        android:hint="@string/email_hint"
-        android:textSize="14sp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etPassWord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail"
-        android:layout_margin="20dp"
-        android:background="@drawable/bg_grey_border"
-        android:gravity="center_vertical"
-        android:elevation="4dp"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
-        android:textColor="@color/color_424242"
-        android:textColorHint="@color/color_9e9e9e"
-        android:inputType="textPassword|textMultiLine"
-        android:hint="@string/password_hint"
-        android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/passwordCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/etPassWord"
-        app:layout_constraintStart_toStartOf="@+id/etPassWord"
-        android:theme="@style/MyCheckBox"
-        android:checked="false"
-        android:visibility="gone"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="6dp"
-        />
+            <TextView
+                android:id="@+id/tvLoginError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/invalid_login_credentials"
+                android:textColor="@color/color_e0340b"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/tvSignIn" />
 
-    <TextView
-        android:id="@+id/tvShowPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/color_424242"
-        android:textSize="12sp"
-        android:text="@string/show_password"
-        android:visibility="gone"
-        android:layout_marginStart="6dp"
-        app:layout_constraintStart_toEndOf="@+id/passwordCheckBox"
-        app:layout_constraintTop_toTopOf="@+id/passwordCheckBox"
-        app:layout_constraintBottom_toBottomOf="@+id/passwordCheckBox"/>
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_grey_border"
+                android:elevation="4dp"
+                android:gravity="center_vertical"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress|textMultiLine"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp"
+                android:textColor="@color/color_424242"
+                android:textColorHint="@color/color_9e9e9e"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvLoginError" />
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:backgroundTint="@color/color_e0340b"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/tvShowPassword"
-        android:layout_margin="20dp"
-        android:text="@string/btn_sign_in" />
+            <EditText
+                android:id="@+id/etPassWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/bg_grey_border"
+                android:elevation="4dp"
+                android:gravity="center_vertical"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword|textMultiLine"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp"
+                android:textColor="@color/color_424242"
+                android:textColorHint="@color/color_9e9e9e"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
-    <TextView
-        android:id="@+id/tvOr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:text="@string/or"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignIn"/>
+            <CheckBox
+                android:id="@+id/passwordCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:checked="false"
+                android:theme="@style/MyCheckBox"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/etPassWord"
+                app:layout_constraintTop_toBottomOf="@+id/etPassWord" />
 
-    <Button
-        android:id="@+id/btnRedirectToSignUpPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:backgroundTint="@color/color_e0340b"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOr"
-        android:layout_margin="20dp"
-        android:text="@string/go_to_sign_up_page" />
+            <TextView
+                android:id="@+id/tvShowPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/show_password"
+                android:textColor="@color/color_424242"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/passwordCheckBox"
+                app:layout_constraintStart_toEndOf="@+id/passwordCheckBox"
+                app:layout_constraintTop_toTopOf="@+id/passwordCheckBox" />
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/color_e0340b"
+                android:gravity="center"
+                android:text="@string/btn_sign_in"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvShowPassword" />
+
+            <TextView
+                android:id="@+id/tvOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/or"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+            <Button
+                android:id="@+id/btnRedirectToSignUpPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/color_e0340b"
+                android:gravity="center"
+                android:text="@string/go_to_sign_up_page"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOr"
+                app:layout_constraintVertical_bias="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

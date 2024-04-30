@@ -28,4 +28,6 @@
     <string name="publish_date">"Published in %s"</string>
     <string name="tags_hint">Add your Tags</string>
     <string name="btn_add_tags">Add Tag</string>
+    <string name="no_internet">You aren’t connected to the internet. Check your network settings, and try again.</string>
+    <string name="no_internet_btn">Try Again</string>
 </resources>
